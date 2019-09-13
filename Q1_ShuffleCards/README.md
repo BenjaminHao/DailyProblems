@@ -1,5 +1,5 @@
 ### 1. Create a new Cards and make sure it has randomized value
-### 2. The original code has some issues, try to fix them
+### 2. The original code has some memory issues, try to fix them
 
 ```c++
 #include <iostream>
