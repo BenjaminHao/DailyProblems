@@ -1,6 +1,10 @@
 #include <vector>
 #include <unordered_map> // using hash table to solve this problem
 
+/**
+ * Problem: https://leetcode.com/problems/two-sum/
+ * Runtime: 4ms. Memory usage: 10.1MB
+**/
 class Solution
 {
 public:
@@ -26,8 +30,3 @@ public:
         return {}; //if no result found, return {}
     }
 };
-
-/*
-** Problem: https://leetcode.com/problems/two-sum/
-** Runtime: 4ms. Memory usage: 10.1MB
-*/
