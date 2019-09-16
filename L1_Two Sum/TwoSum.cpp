@@ -6,7 +6,7 @@ class Solution
 public:
     std::vector<int> twosum(std::vector<int> nums, int target)
     {
-        std::unordered_map<int, int> indices; // store numbers and thier index into a hash table
+        std::unordered_map<int, int> indices; // store numbers and thier indices into a hash table
 
         for (int i = 0; i != nums.size(); ++i) // iterate nums vector
         {
