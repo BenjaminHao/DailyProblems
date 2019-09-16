@@ -6,13 +6,13 @@
 ```c++
 #include <iostream>
 
-class Cards
+class Card
 {
 public:
-	Cards() {};
-	~Cards() {};
+	Card() {};
+	~Card() {};
 
-	void SetCards(char* card)
+	void SetCard(char* card)
 	{
 		Name = (char*)malloc(sizeof(card));
 		Name = card;
@@ -32,23 +32,23 @@ char* deck[52] = { "AC", "AD", "AH", "AS", "2C", "2D", "2H", "2S", "3C", "3D", "
 "8C", "8D", "8H", "8S", "9C", "9D", "9H", "9S", "TC", "TD", "TH", "TS", "JC", "JD", "JH", "JS",
 "QC", "QD", "QH", "QS", "KC", "KD", "KH", "KS"};
 
-void DisplayCard(Cards*);
+void DisplayCards(Card*);
 
 int main(int argc, char* argv[])
 {
-	Cards originalCards[52];
+	Card cards[52];
 
 	for (int i = 0; i != 52; ++i)
 	{
-		originalCards[i].SetCards(deck[i]);
+		cards[i].SetCard(deck[i]);
 	}
 	
-	DisplayCard(originalCards);
+	DisplayCards(cards);
 
 	return 0;
 }
 
-void DisplayCard(Cards* card)
+void DisplayCards(Card* card)
 {
 	std::cout << "The Cards are: " << std::endl;
 	for (int i = 0; i != 52; ++i)
