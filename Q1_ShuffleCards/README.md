@@ -1,5 +1,5 @@
-### 1. Randomize Cards, make sure it has pure randomized value (shuffle cards)
-* Do NOT create new Cards (in-place)
+### 1. Randomize cards, make sure it has pure randomized value (shuffle cards)
+* Do NOT create new Card (in-place)
 * Do NOT use STL(like std::shuffle, std::random_shuffle, etc.)
 ### 2. The original code has some memory issues, try to fix them
 
