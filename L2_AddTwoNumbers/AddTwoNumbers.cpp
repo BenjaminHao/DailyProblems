@@ -5,7 +5,6 @@ struct ListNode {
     ListNode(int x) : val(x), next(nullptr) {}
 };
 
-
 /**
  * Problem: https://leetcode.com/problems/add-two-numbers/
  * Runtime: 28ms, faster than 28.42%

@@ -1,21 +1,28 @@
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 
 class Card
 {
 public:
 	Card() {};
-	~Card() {};
 
 	void SetCard(char* card)
 	{
 		Name = (char*)malloc(sizeof(card));
-		Name = card;
+		//Name = card;
+        memcpy(Name, card, sizeof(card));
 	}
 
 	const char* GetCardName()
 	{
 		return Name;
 	}
+
+	~Card() 
+    {
+        free(Name);  // when destrocting Cards, free the memory we allocated to pervent memory leak
+    };
 
 private:
 	char* Name;
@@ -26,8 +33,8 @@ char* deck[52] = { "AC", "AD", "AH", "AS", "2C", "2D", "2H", "2S", "3C", "3D", "
 "8C", "8D", "8H", "8S", "9C", "9D", "9H", "9S", "TC", "TD", "TH", "TS", "JC", "JD", "JH", "JS",
 "QC", "QD", "QH", "QS", "KC", "KD", "KH", "KS"};
 
-void DisplayCards(Card*);
-void RandomizeCards(Card*);
+void DisplayCard(Card*);
+void RandomizeCard(Card*);
 
 int main(int argc, char* argv[])
 {
@@ -35,16 +42,16 @@ int main(int argc, char* argv[])
 
 	for (int i = 0; i != 52; ++i)
 	{
-		cards[i].SetCard(deck[i]);
+        cards[i].SetCard(deck[i]);
 	}
 	
-	RandomizeCards(cards);
-	DisplayCards(cards);
+    RandomizeCard(cards);
+	DisplayCard(cards);
 
 	return 0;
 }
 
-void DisplayCards(Card* card)
+void DisplayCard(Card* card)
 {
 	std::cout << "The Cards are: " << std::endl;
 	for (int i = 0; i != 52; ++i)
@@ -53,7 +60,8 @@ void DisplayCards(Card* card)
 	}
 }
 
-void RandomizeCards(Card* card)
+void RandomizeCard(Card* card)
 {
-	// TODO: implement RandomizeCards
+    std::srand(std::time(NULL));
+    
 }
