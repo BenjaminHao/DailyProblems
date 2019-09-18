@@ -1,5 +1,5 @@
-# RandomCPPStuff
-## Some Random Questions Solved by C++
+# Daily Questions
+## LeetCode questions and some random questions Solved by C++ (maybe other languages later)
 
 Including LeetCode questions - start with letter L,
 
