@@ -1,4 +1,4 @@
-### 1. Randomize cards, make sure it has pure randomized value (shuffle cards)
+### 1. Implement RandomizeCards function, make sure it has pure randomized value (shuffle cards)
 * Do NOT create new Card (in-place)
 * Do NOT use STL(like std::shuffle, std::random_shuffle, etc.)
 ### 2. The original code has some memory issues, try to fix them
@@ -33,6 +33,7 @@ char* deck[52] = { "AC", "AD", "AH", "AS", "2C", "2D", "2H", "2S", "3C", "3D", "
 "QC", "QD", "QH", "QS", "KC", "KD", "KH", "KS"};
 
 void DisplayCards(Card*);
+void RandomizeCards(Card*);
 
 int main(int argc, char* argv[])
 {
@@ -43,6 +44,7 @@ int main(int argc, char* argv[])
 		cards[i].SetCard(deck[i]);
 	}
 	
+	RandomizeCards(cards);
 	DisplayCards(cards);
 
 	return 0;
@@ -55,5 +57,10 @@ void DisplayCards(Card* card)
 	{
 		std::cout << card[i].GetCardName() << std::endl;
 	}
+}
+
+void RandomizeCards(Card* card)
+{
+	// TODO: implement RandomizeCards
 }
 ```
