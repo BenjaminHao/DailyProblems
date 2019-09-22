@@ -49,7 +49,7 @@ int climbStairs(int n)
 **BUT**, there's a problem here: the time complexity is very high
 ![Time Complexity](https://upload.wikimedia.org/wikipedia/commons/5/5f/FibbonacciRecurisive.png)
 
-In order to solve F(N), we will caculate function 2^N times, i.e. the time complexity is O(2^N). There are tons of repeating caculations.
+In order to solve F(N), we will caculate function 2^N times, i.e. the time complexity is O(2^N). There are tons of repeated caculations.
 
 How to solve this problem?  
 In recursion, we caculate from top to bottom. What if we caculate from bottom to top?  
