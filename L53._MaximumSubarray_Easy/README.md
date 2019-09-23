@@ -11,7 +11,7 @@ Output: 6
 If you have figured out the O(n) solution, try coding another solution using the divide and conquer approach, which is more subtle.
 
 ---
-## Thinking
+## **Thinking**
 If we are at the i'th element, how can we get the maximum subarray though the i'th element and former elements?  
 Of course we want more positive numbers and less negative numbers. So if we have a subarray that might be the maximum subarray, we want the next element of it is a positive number. So the sum of the subarray would be bigger.  
 Thinking that we have a positive element. The sum of the subarray before this element is a positive number. If add this element into the subarray, the subarray would be bigger. BUT if the sum of the subarray is negative. WTF, the element will lose its value. Then why doesn't the element become a new subarray?
