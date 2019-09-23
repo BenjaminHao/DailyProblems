@@ -12,6 +12,7 @@ If you have figured out the O(n) solution, try coding another solution using the
 
 ---
 ## **Thinking**
+### **Dynamic Programming**
 If we are at the i'th element, how can we get the maximum subarray though the i'th element and former elements?  
 Of course we want more positive numbers and less negative numbers. So if we have a subarray that might be the maximum subarray, we want the next element of it is a positive number. So the sum of the subarray would be bigger.  
 Thinking that we have a positive element. The sum of the subarray before this element is a positive number. If add this element into the subarray, the subarray would be bigger. BUT if the sum of the subarray is negative. WTF, the element will lose its value. Then why doesn't the element become a new subarray?
@@ -28,4 +29,22 @@ else
 {
     dp[i] = nums[i];
 }
+```
+### **Dynamic Programming - Easier approach**
+There is a nice introduction to the DP algorithm in this [Wikipedia article](https://en.wikipedia.org/wiki/Maximum_subarray_problem).  
+The idea is to maintain a running maximum `res` and a current summation `sum`. When we visit each `num` in `nums`, add `num` to `sum`, then update `res` if necessary or reset `sum` to 0 if it becomes negative.
+```cpp    
+    int maxSubArray(std::vector<int>& nums) 
+    {
+        int curSum = 0, res = INT_MIN;
+
+        for (int num : nums)
+        {
+            curSum += num;
+            res = std::max(curSum, res);
+            if (curSum < 0) curSum = 0;
+        }
+
+        return res;
+    }
 ```
