@@ -14,7 +14,7 @@ public:
         int res = 0; // result, the value we return
         int begin = 0, end = 0; // two pointers, to track the distance between two values
         int arr[256]; // hash tbale, since char is also a integral type, we can simply use an array. (key: index, value: 0 or 1)
-        memset(arr, 0, sizeof(*arr) * 256); // set elements of array to 0
+        memset(arr, 0, sizeof(arr)); // set elements of array to 0
         
         while (end != s.size()) // iterate the string
         {

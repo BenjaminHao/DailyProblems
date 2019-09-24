@@ -1,16 +1,14 @@
-#include <string>
-
-/** isPanlindrome(str)
- *  1. Find the length of str. Let length be n
- *  2. Initialize begin and end indices as 0 and n-1 respectively
+/** isPanlindrome(char* str, int N)
+ *  1. The size of string is N
+ *  2. Initialize begin and end indices as 0 and N-1 respectively
  *  3. While begin index is smaller than end index
  *      a. return false if str[begin] != str[end]
  *      b. increment begin and decrement righ
  *  4. If reach here, then str is a panlindrome
 **/
-bool isPanlindrome(std::string str)
+bool isPanlindrome(char* str, int N)
 {
-    int begin = 0, end = str.size() - 1;
+    int begin = 0, end = N - 1;
 
     while (begin < end)
     {
