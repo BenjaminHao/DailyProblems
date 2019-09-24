@@ -20,7 +20,7 @@ bool isUnique(std::string s)
     return true;
 }
 ```
-> The time complexity if O(n).
+> The time complexity is O(n).
 ### **Bit manipulation**
  We can also use bit manipulation to reduce the space we used.  
 For ASCII code, we need 256 bits, i.e. An array that has 8 ints. The key here is to get the character into the correct bit. For example, we have character 'b', the corresponding ASCII code is 98. Then, 98/32 is the corresponding index of array, and 98%32 is the corresponding bit.
@@ -40,26 +40,12 @@ bool inUnique(std::string s)
     return true;
 }
 ```
-bit a | bit b | a & b |
-:---:|:---:|:---:|
-0|1|0|
-0|1|0|
-1|0|0|
-1|1|1|
-
-bit a | bit b | a \| b |
-:---:|:---:|:---:|
-0|1|0|
-0|1|1|
-1|0|1|
-1|1|1|
-
-bit a | bit b | a ^ b |
-:---:|:---:|:---:|
-0|1|1|
-0|1|1|
-1|0|1|
-1|1|0|
+bit a | bit b | a & b | a\|b | a ^ b |
+:--:|:--:|:----:|:----:|:----:|
+0|1|0|0|1|
+0|1|0|1|1|
+1|0|0|1|1|
+1|1|1|1|0|
 
 If the characters are only a - z, then it's eaiser.
 ```cpp
