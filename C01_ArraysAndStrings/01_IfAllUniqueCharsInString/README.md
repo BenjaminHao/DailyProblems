@@ -40,13 +40,14 @@ bool inUnique(std::string s)
     return true;
 }
 ```
+> bitwise operation
+
 | a | b | a & b | a \| b | a ^ b |
 |:--:|:--:|:----:|:----:|:----:|
 |0|1|0|0|1|
 |0|1|0|1|1|
 |1|0|0|1|1|
 |1|1|1|1|0|
-> bitwise operation
 
 If the characters are only a - z, then it's eaiser.
 ```cpp
