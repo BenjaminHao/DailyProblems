@@ -47,6 +47,7 @@ bool inUnique(std::string s)
 |1|0|0|1|1|
 |1|1|1|1|0|
 > bitwise operation
+
 If the characters are only a - z, then it's eaiser.
 ```cpp
 bool isUnique(std::string s)
