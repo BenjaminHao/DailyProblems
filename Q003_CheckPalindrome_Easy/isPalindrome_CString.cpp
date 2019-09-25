@@ -6,9 +6,12 @@
  *      b. increment begin and decrement righ
  *  4. If reach here, then str is a panlindrome
 **/
-bool isPanlindrome(char* str, int N)
+bool isPanlindrome(char str[])
 {
-    int begin = 0, end = N - 1;
+    int begin = 0, end = 0;
+
+    while (str[end] != '\0') ++end;
+    --end;
 
     while (begin < end)
     {
