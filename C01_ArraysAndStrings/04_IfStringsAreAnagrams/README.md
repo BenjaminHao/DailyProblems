@@ -36,8 +36,8 @@ bool isAnagram(std::string s1, std::string s2)
 
     for (int i = 0, i < n; ++i)
     {
-        ++c[s1[i]];
-        --c[s2[i]];
+        ++buffer[s1[i]];
+        --buffer[s2[i]];
     }
 
     for (int i : buffer)
