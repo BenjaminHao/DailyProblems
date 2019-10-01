@@ -1,4 +1,5 @@
-# Given an image represented by an NxN matrix, where each pixel in the image is 4 bytes, write a method to rotate the image by 90 degrees. Can you do this in place?
+# Question 1.6
+## Given an image represented by an NxN matrix, where each pixel in the image is 4 bytes, write a method to rotate the image by 90 degrees. Can you do this in place?
 
 ## Thinking
 If we have an image
@@ -33,7 +34,7 @@ Then it's obvious. We just need to swap the `i` line with `n - 1 - i` line.
 3   7   11  15   ----/   2   6   10   14
 4   8   12  16           1   5   9    13
 ```
-### Code
+## Code
 ```cpp
 void transpose(int matrix[4][4])
 {

@@ -1,4 +1,5 @@
-# Write an algorithm such that if an element in an MxN matrix is 0, its entire row and column is set to 0.
+# Question 1.7
+## Write an algorithm such that if an element in an MxN matrix is 0, its entire row and column is set to 0.
 
 ## Thinking
 An easy question. Iterate the matrix, if we find an element is 0, we get the row number and column number.  

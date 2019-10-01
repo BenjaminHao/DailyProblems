@@ -1,4 +1,5 @@
-# Write a method to decide if two strings are anagrams or not.
+# Question 1.4
+## Write a method to decide if two strings are anagrams or not.
 
 ## Thinking
 ### What are anagrams?

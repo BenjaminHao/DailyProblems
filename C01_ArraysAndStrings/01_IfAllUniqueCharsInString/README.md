@@ -1,4 +1,5 @@
-# Implement an algorithm to determine if a string has all unique characters. What if you can not use additional data structures?
+# Question 1.1
+## Implement an algorithm to determine if a string has all unique characters. What if you can not use additional data structures?
 
 ## **Thinking**
 First of all, what kinds of characters in the string? Are they ASCII code, or just 26 normal English characters. We have different solutions for different situations.
