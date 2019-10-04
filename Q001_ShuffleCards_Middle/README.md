@@ -86,12 +86,12 @@ This is the only thing that might be new in this question. The things left are v
 ### 2. Fixing memory issues.
 Go through source code, we have a class called `Card`. In `Card` class, there's a method called `SetCard()`. We allocate memory for `Name`. However, we didn't `free()` the memory we allocated. Where should we free the memory? Of course, in the destructor. Because we want to free the memory after we are done using it. So in `~Card()`, we `free(Name)`.
 
-Still in the `SetCard()` method, we allocate memory for `Name`. Then, what we want is to assign the `cardName` string to `Name` string. However, `Name = cardName` here means we let `Name` point to where `cardName` pointing at. Although we got what we want, there's no pointer pointing the memory we just allocated! That caused **memory leak**. The correct way is copying the memory by using `memcpy()`.
+Still in the `SetCard()` method, we allocate memory for `Name`. Then, what we want is to assign the `cardName` string to `Name` string. However, `Name = cardName` here means we let `Name` point to where `cardName` pointing at. Although we got what we want, there's no pointers pointing the memory we just allocated! That caused **memory leak**. The correct way is copying the memory by using `memcpy()`.
 
 In `main()` function, we initialized 2 Card arrays, and then, here is the trick part. We iterate the `sortedCard` array, and called method `SetCard()`. Then instead of calling `SetCard()` for `shuffledCards` array, we assign `sortedCards` to `shuffledCards`.  
-It seems ok. However, it is not. Because we don't have a **assignment operator** (Not *copy constructor* [<sup>1</sup>](#1)) for `Card` class. So the complier will generate a default one for us. Using default assignment operator will result in **shallow copy**, which means **the object and the copied object will point to the same memory location**. So what's wrong here?  
+It seems ok. However, it is not. Because we don't have an **assignment operator** (Not *copy constructor* [<sup>1</sup>](#1)) for `Card` class. So the complier will generate a default one for us. Using default assignment operator will result in **shallow copy**, which means **the object and the copied object will point to the same memory location**. So what's wrong here?  
 After reaching the end of the program (at then end of `main()` function), `sortedCards` and `shuffledCards` will be killed. First, `sortedCards` gets killed. The destructor of `Card` will be called, and then the memory we allocated will be freed. Everything seems good. Then, `shuffledCards` gets killed. Same thing, the destructor of `Card` gets to called. However, the memory we allocated has already been freed, which will cause *undefined behavior*.  
-So we need to create a **assignment operator** for class `Card`.
+So we need to create an **assignment operator** for class `Card`.
 ```cpp
 Card& Card::operator=(const Card& c)
 {
