@@ -19,7 +19,7 @@ void remove(Node* p)
     if (p == nullptr) return;
     if (p->next == nullptr)
     {
-	    std::cerr << "Unable to remove Tail Node." << std::endl;
+        std::cerr << "Unable to remove Tail Node." << std::endl;
         return;
     }
         
