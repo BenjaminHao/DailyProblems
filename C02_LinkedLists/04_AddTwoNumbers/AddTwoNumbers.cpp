@@ -85,7 +85,7 @@ int main()
 	Node* tmp = AddTwoNumbers(l1.head, l2.head);
 	while (tmp)
 	{
-        // tmp_d is used for delete tmp Nodes
+        // tmp_d is used for deleting tmp Nodes
 		Node* tmp_d = tmp;
         // push data into Linked List to print it reversely
 		res.push(tmp->data);
