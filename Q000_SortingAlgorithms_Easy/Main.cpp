@@ -1,6 +1,13 @@
 #include <iostream>
 #include "SortingAlgorithms.h"
 
+void printArray(int arr[], int size) {
+    for (int i = 0; i < size; ++i) {
+        std::cout << arr[i] << " ";
+    }
+    std::cout << std::endl; // Print a newline at the end
+}
+
 int main()
 {
     int a[]  = {2, 6, 8, 3, 5, 7, 1, 9, 4};
@@ -18,24 +25,17 @@ int main()
     std::cout << "After Sorting: " << std::endl;
 
     std::cout << "Selection Sort: ";
-    for (int i : a) { std::cout << i << " ";}
-    std::cout << std::endl;
+    printArray(a, 9);
 
     std::cout << "Insertion Sort: ";
-    for (int i : b) { std::cout << i << " ";}
-    std::cout << std::endl;
+    printArray(b, 9);
 
     std::cout << "Bubble Sort: ";
-    for (int i : c) { std::cout << i << " ";}
-    std::cout << std::endl;
+    printArray(c, 9);
 
     std::cout << "Merge Sort: ";
-    for (int i : d) { std::cout << i << " ";}
-    std::cout << std::endl;
+    printArray(d, 9);
 
     std::cout << "Quick Sort: ";
-    for (int i : e) { std::cout << i << " ";}
-    std::cout << std::endl;
-
-    
+    printArray(e, 9);
 }
