@@ -1,10 +1,12 @@
+/**
+ * Problem: https://leetcode.com/problems/two-sum/description/
+ * Solution: https://leetcode.com/problems/two-sum/submissions/1380477626
+ * Time complexity: O(n)
+ * Space complexity: O(n)
+ */
 #include <vector>
 #include <unordered_map> // using hash table to solve this problem
 
-/**
- * Problem: https://leetcode.com/problems/two-sum/
- * Runtime: 4ms. Memory usage: 10.1MB
-**/
 class Solution
 {
 public:
@@ -24,7 +26,6 @@ public:
             {
                 indices[nums[i]] = i; // we save current num into indices. key: num, value: index
             }
-            
         }
 
         return {}; //if no result found, return {}

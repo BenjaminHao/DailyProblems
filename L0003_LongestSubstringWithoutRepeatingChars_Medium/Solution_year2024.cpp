@@ -1,11 +1,12 @@
-#include <string>
-
 /**
  * Problem: https://leetcode.com/problems/longest-substring-without-repeating-characters/
- * Runtime: 0 ms, Beats 100.00%
- * Memory Usage: 10 MB, Beats 95.83%
-**/
-class Solution {
+ * Solution: https://leetcode.com/problems/longest-substring-without-repeating-characters/submissions/1400114759
+ * Time Complexity: O(n)
+ * Space Complexity: O(1)
+ */
+#include <string>
+
+class Solution_year2024 {
 public:
     int lengthOfLongestSubstring(std::string s) {
       int result = 0;

@@ -1,3 +1,9 @@
+/**
+ * Problem: https://leetcode.com/problems/add-two-numbers/
+ * Solution: https://leetcode.com/problems/add-two-numbers/submissions/1388158400
+ * Time complexity:O(n)
+ * Space complexity:O(n)
+ */
 // Definition for singly-linked list.
 struct ListNode {
     int val;
@@ -7,12 +13,7 @@ struct ListNode {
     ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
 
-/**
- * Problem: https://leetcode.com/problems/add-two-numbers/
- * Runtime: 26ms, Beats 37.58%
- * Memory usage: 77.4MB, Beats 76.40%
-**/
-class Solution
+class Solution_year2024
 {
 public:
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) 

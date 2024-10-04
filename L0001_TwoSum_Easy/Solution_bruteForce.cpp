@@ -1,10 +1,12 @@
+/**
+ * Problem: https://leetcode.com/problems/two-sum/description/
+ * Solution: https://leetcode.com/problems/two-sum/submissions/1380471103
+ * Time complexity: O(n^2)
+ * Space complexity: O(1)
+ */
 #include <vector>
 
-/**
- * Problem: https://leetcode.com/problems/two-sum/
- * Runtime: 53ms. Memory usage: 12.9MB O(n^2)
-**/
-class Solution
+class Solution_bruteForce
 {
 public:
     std::vector<int> twosum(std::vector<int> nums, int target)
