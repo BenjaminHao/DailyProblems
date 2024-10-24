@@ -12,7 +12,8 @@
 #include <algorithm>
 #include <string>
 
-class Solution_dp {
+class Solution_dp
+{
 public:
     std::string longestPalindrome(std::string s)
     {

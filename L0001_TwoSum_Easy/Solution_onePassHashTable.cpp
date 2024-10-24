@@ -4,30 +4,32 @@
  * Time complexity: O(n)
  * Space complexity: O(n)
  */
+#include <unordered_map>  // using hash table to solve this problem
 #include <vector>
-#include <unordered_map> // using hash table to solve this problem
 
 class Solution
 {
 public:
     std::vector<int> twosum(std::vector<int> nums, int target)
     {
-        std::unordered_map<int, int> indices; // store numbers and thier indices into a hash table
-
-        for (int i = 0; i != nums.size(); ++i) // iterate nums vector
+        // store numbers and thier indices into a hash table
+        std::unordered_map<int, int> indices;
+        // iterate nums vector
+        for (int i = 0; i != nums.size(); ++i)
         {
             int complement = target - nums[i];
-
-            if (indices.find(complement) != indices.end()) // if the complement exists in the hash table
+            // if the complement exists in the hash table
+            if (indices.find(complement) != indices.end())
             {
                 return {i, indices[nums[complement]]};
             }
-            else // if the complement does not exist
+            else
             {
-                indices[nums[i]] = i; // we save current num into indices. key: num, value: index
+                // we save current num into indices. key: num, value: index
+                indices[nums[i]] = i;
             }
         }
-
-        return {}; //if no result found, return {}
+        // if no result found, return {}
+        return {};
     }
 };

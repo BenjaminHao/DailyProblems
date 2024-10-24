@@ -6,7 +6,6 @@ class Card
 {
 public:
 	Card() {};
-
 	void SetCard(char* cardName)
 	{
 		Name = (char*)malloc(sizeof(cardName));

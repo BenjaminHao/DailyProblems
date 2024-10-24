@@ -12,5 +12,7 @@ int climbStairs(int n)
         step[i] = step[i - 1] + step[i - 2];
     }
 
-    return step[n];
+    int res = step[n];
+    delete[] step;
+    return res;
 }

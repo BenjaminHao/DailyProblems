@@ -1,5 +1,5 @@
-#include <iostream>
 #include <cstring>
+#include <iostream>
 
 bool isUnique1(std::string s)
 {
@@ -23,7 +23,7 @@ bool isUnique2(std::string s)
     for (int i = 0; i < s.size(); ++i)
     {
         int code = (int)s[i];
-        int index = code/32, bit = code%32;
+        int index = code / 32, bit = code % 32;
         if (a[index] & (1 << bit)) return false;
         a[index] |= (1 << bit);
     }

@@ -6,15 +6,17 @@
  */
 #include <vector>
 
-class Solution_bruteForce
+// brute force
+class Solution_bf
 {
 public:
     std::vector<int> twosum(std::vector<int> nums, int target)
     {
-        for (int i = 0; i < nums.size() - 1; i++) {
-            for (int j = 1; j < nums.size(); j++) {
-                if (nums[i] + nums[j] == target)
-                    return {i, j};
+        for (int i = 0; i < nums.size() - 1; i++)
+        {
+            for (int j = 1; j < nums.size(); j++)
+            {
+                if (nums[i] + nums[j] == target) return {i, j};
             }
         }
         return {};
