@@ -19,6 +19,7 @@ public:
         for (int i = 0; i <= static_cast<int>(std::sqrt(n)); ++i)
             sqr.push_back(i * i);
 
+        // todo
         return 0;
     }
 };

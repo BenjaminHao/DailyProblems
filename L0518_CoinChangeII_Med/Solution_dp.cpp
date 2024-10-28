@@ -19,7 +19,7 @@ public:
     {
         std::vector<int> dp(amount + 1, 0);
         // Base case: there's one way to make amount 0 (using no coins)
-        // kind of make sense to me?
+        // makes no sense to me, in coin change 1, dp[0] = 0
         dp[0] = 1;
 
         for (int i = 0; i < coins.size(); ++i)

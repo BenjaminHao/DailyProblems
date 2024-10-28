@@ -15,12 +15,12 @@
 #include <algorithm>
 #include <vector>
 
-class Solution_dp
+class Solution_dp1
 {
 public:
     int integerBreak(int n)
     {
-        vector<int> dp(n + 1);
+        std::vector<int> dp(n + 1);
         dp[0] = 0;  // cant break 0
         dp[1] = 0;  // cant break 1
 
