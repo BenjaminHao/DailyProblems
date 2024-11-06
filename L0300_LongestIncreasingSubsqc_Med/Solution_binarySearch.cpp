@@ -4,7 +4,7 @@
  * Solution:
  *   https://leetcode.com/problems/longest-increasing-subsequence/submissions/1436691568/
  * Thought:
- *   dp[i] - the smallest ending number of a subsequence that has lengh i+1.
+ *   sub[i] - the smallest ending number of a subsequence that has lengh i+1.
  *   For each num, we can
  *   1. extend the longest subsequence
  *   2. replace a number to generate a better subsequence
@@ -20,13 +20,13 @@ class Solution_binarySearch
 public:
     int lengthoflis(vector<int>& nums)
     {
-        vector<int> dp;
+        vector<int> sub;
 
         for (int num : nums)
         {
-            auto it = lower_bound(dp.begin(), dp.end(), num);
-            if (it == dp.end())
-                dp.push_back(num);
+            auto it = lower_bound(sub.begin(), sub.end(), num);
+            if (it == sub.end())
+                sub.push_back(num);
             else
                 *it = num;
 
@@ -36,6 +36,6 @@ public:
             // else
             //     *lower_bound(dp.begin(), dp.end(), num) = num;
         }
-        return dp.size();
+        return sub.size();
     }
 };
