@@ -1,15 +1,14 @@
 /**
  * Problem:
- *   https://leetcode.com/problems/binary-tree-preorder-traversal/description/
+ *   https://leetcode.com/problems/binary-tree-inorder-traversal/description/
  * Solution:
- *   https://leetcode.com/problems/binary-tree-preorder-traversal/submissions/1446260950/
+ *   https://leetcode.com/problems/binary-tree-inorder-traversal/submissions/1446262921/
  * Time complexity: O(n)
  * Space complexity: O(l) where l is the levels of the binary tree
- */
+ **/
+// Definition for a binary tree node.
 #include <vector>
 using namespace std;
-
-// Definition for a binary tree node.
 struct TreeNode
 {
     int val;
@@ -22,22 +21,23 @@ struct TreeNode
     {
     }
 };
+
 class Solution
 {
 public:
     vector<int> res;
-    vector<int> preorderTraversal(TreeNode* root)
+    vector<int> inorderTraversal(TreeNode* root)
     {
-        preOrder(root);
+        inOrder(root);
         return res;
     }
 
 private:
-    void preOrder(TreeNode* root)
+    void inOrder(TreeNode* root)
     {
         if (!root) return;
+        inOrder(root->left);
         res.push_back(root->val);
-        preOrder(root->left);
-        preOrder(root->right);
+        inOrder(root->right);
     }
 };

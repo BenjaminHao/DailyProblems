@@ -1,8 +1,8 @@
 /**
  * Problem:
- *   https://leetcode.com/problems/binary-tree-preorder-traversal/description/
+ *   https://leetcode.com/problems/binary-tree-postorder-traversal/description/
  * Solution:
- *   https://leetcode.com/problems/binary-tree-preorder-traversal/submissions/1446260950/
+ *   https://leetcode.com/problems/binary-tree-postorder-traversal/submissions/1446263995/
  * Time complexity: O(n)
  * Space complexity: O(l) where l is the levels of the binary tree
  */
@@ -26,18 +26,18 @@ class Solution
 {
 public:
     vector<int> res;
-    vector<int> preorderTraversal(TreeNode* root)
+    vector<int> postorderTraversal(TreeNode* root)
     {
-        preOrder(root);
+        postOrder(root);
         return res;
     }
 
 private:
-    void preOrder(TreeNode* root)
+    void postOrder(TreeNode* root)
     {
         if (!root) return;
+        postOrder(root->left);
+        postOrder(root->right);
         res.push_back(root->val);
-        preOrder(root->left);
-        preOrder(root->right);
     }
 };

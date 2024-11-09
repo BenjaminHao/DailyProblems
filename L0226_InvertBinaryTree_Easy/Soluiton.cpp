@@ -1,14 +1,13 @@
 /**
  * Problem:
- *   https://leetcode.com/problems/binary-tree-preorder-traversal/description/
+ *   https://leetcode.com/problems/invert-binary-tree/description/
  * Solution:
- *   https://leetcode.com/problems/binary-tree-preorder-traversal/submissions/1446260950/
+ *   https://leetcode.com/problems/invert-binary-tree/submissions/1446281472/
+ * Thought: Invert pointers, not values.
  * Time complexity: O(n)
  * Space complexity: O(l) where l is the levels of the binary tree
  */
-#include <vector>
 using namespace std;
-
 // Definition for a binary tree node.
 struct TreeNode
 {
@@ -22,22 +21,22 @@ struct TreeNode
     {
     }
 };
+
 class Solution
 {
 public:
-    vector<int> res;
-    vector<int> preorderTraversal(TreeNode* root)
+    TreeNode* invertTree(TreeNode* root)
     {
-        preOrder(root);
-        return res;
+        invert(root);
+        return root;
     }
 
 private:
-    void preOrder(TreeNode* root)
+    void invert(TreeNode* node)
     {
-        if (!root) return;
-        res.push_back(root->val);
-        preOrder(root->left);
-        preOrder(root->right);
+        if (!node) return;
+        swap(node->left, node->right);
+        invert(node->left);
+        invert(node->right);
     }
 };
