@@ -2,7 +2,7 @@
  * Problem:
  *   https://leetcode.com/problems/swap-nodes-in-pairs/description/
  * Solution:
- *
+ *   https://leetcode.com/problems/swap-nodes-in-pairs/submissions/1453773114/
  * Time complexity: O(n)
  * Space complexity: O(1)
  */
@@ -22,6 +22,18 @@ public:
     ListNode* swapPairs(ListNode* head)
     {
         ListNode* dummyHead = new ListNode(-1, head);
-        ListNode* curr = dummyHead;
+        ListNode* currNode = dummyHead;
+
+        while (currNode->next && currNode->next->next)
+        {
+            ListNode* nextNode = currNode->next;
+            ListNode* nextPair = currNode->next->next->next;
+            currNode->next = nextNode->next;
+            currNode->next->next = nextNode;
+            nextNode->next = nextPair;
+            currNode = nextNode;
+        }
+
+        return dummyHead->next;
     }
 };
