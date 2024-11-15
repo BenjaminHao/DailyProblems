@@ -4,7 +4,7 @@
  * Solution:
  *   https://leetcode.com/problems/binary-tree-inorder-traversal/submissions/1446262921/
  * Time complexity: O(n)
- * Space complexity: O(l) where l is the levels of the binary tree
+ * Space complexity: O(h) where h is the height of the binary tree
  **/
 // Definition for a binary tree node.
 #include <vector>
@@ -22,7 +22,7 @@ struct TreeNode
     }
 };
 
-class Solution
+class Solution_re
 {
 public:
     vector<int> res;

@@ -22,12 +22,15 @@ class Solution_re2
 public:
     ListNode* reverseList(ListNode* head)
     {
-        if (head == nullptr || head->next == nullptr) return head;
-
-        ListNode* tmp = reverseList(head->next);
+        // if no nodes or only one nodes, it's already reversed
+        if (!head || !head->next) return head;
+        // reverse the rest List except head
+        ListNode* rest = reverseList(head->next);
+        // the reversed list points to the head
         head->next->next = head;
+        // head is reversed and is the end of the list
         head->next = nullptr;
-
-        return tmp;
+        // pass back the reversed list
+        return rest;
     }
 };

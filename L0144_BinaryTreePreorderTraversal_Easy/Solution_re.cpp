@@ -1,10 +1,10 @@
 /**
  * Problem:
- *   https://leetcode.com/problems/binary-tree-postorder-traversal/description/
+ *   https://leetcode.com/problems/binary-tree-preorder-traversal/description/
  * Solution:
- *   https://leetcode.com/problems/binary-tree-postorder-traversal/submissions/1446263995/
+ *   https://leetcode.com/problems/binary-tree-preorder-traversal/submissions/1446260950/
  * Time complexity: O(n)
- * Space complexity: O(l) where l is the levels of the binary tree
+ * Space complexity: O(h) where h is the hight of the binary tree
  */
 #include <vector>
 using namespace std;
@@ -22,22 +22,22 @@ struct TreeNode
     {
     }
 };
-class Solution
+class Solution_re
 {
 public:
     vector<int> res;
-    vector<int> postorderTraversal(TreeNode* root)
+    vector<int> preorderTraversal(TreeNode* root)
     {
-        postOrder(root);
+        preOrder(root);
         return res;
     }
 
 private:
-    void postOrder(TreeNode* root)
+    void preOrder(TreeNode* root)
     {
         if (!root) return;
-        postOrder(root->left);
-        postOrder(root->right);
         res.push_back(root->val);
+        preOrder(root->left);
+        preOrder(root->right);
     }
 };
